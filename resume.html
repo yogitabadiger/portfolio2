@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume - Yogita V. Badiger</title>
+
+  <style>
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Background with animation (same as biodata) */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0f7fa, #80d0c7, #13547a);
+      color: #333;
+      animation: bgAnimation 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Navigation Bar (same as biodata) */
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 15px 40px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #13547a;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      text-decoration: none;
+      background: linear-gradient(135deg, #13547a, #80d0c7);
+      color: #fff;
+      padding: 10px 20px;
+      margin: 0 8px;
+      border-radius: 25px;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    }
+
+    nav a:hover {
+      background: linear-gradient(135deg, #80d0c7, #13547a);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
+    }
+
+    nav a.active {
+      background: linear-gradient(135deg, #80d0c7, #13547a);
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.3);
+      transform: scale(1.05);
+    }
+
+    /* Glass container */
+    .container {
+      margin-top: 120px;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 50px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+      width: 90%;
+      max-width: 950px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      animation: fadeIn 1.2s ease-in-out;
+      position: relative;
+      max-height: 92vh;
+      overflow-y: auto;
+    }
+
+    /* Title */
+    .title {
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #13547a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+      margin: 8px 0 20px;
+      color: #222;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .contact a {
+      color: #13547a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact a:hover { text-decoration: underline; }
+
+    /* Section titles */
+    h2.section-title {
+      color: #13547a;
+      font-size: 1.3rem;
+      margin-top: 20px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid rgba(19,84,122,0.3);
+      padding-bottom: 6px;
+    }
+
+    /* Text */
+    p, li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #222;
+    }
+    ul {
+      margin: 8px 0 12px 20px;
+      padding-left: 10px;
+    }
+    li { margin-bottom: 6px; }
+    .emph { font-weight: bold; color: #000; }
+    .muted { color: #555; font-size: 0.95rem; }
+
+    /* Declaration */
+    .declaration {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 1rem;
+      color: #222;
+    }
+    .signature-section {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 1rem;
+      color: #444;
+     }
+     .signature {
+      font-family: "Brush Script MT", cursive;
+      font-size: 1.8rem;
+      color: #13547a;
+      margin-bottom: 5px;
+     }
+     .signature {
+        font-size: 1.5rem;  
+     }
+
+    /* Place & Signature row */
+    .sign-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      font-size: 1rem;
+    }
+    .sign-left { text-align: left; }
+    .sign-right { text-align: right; font-weight: bold; }
+
+    /* Footer */
+    .foot {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav a {
+        margin: 5px;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+      .container {
+        padding: 30px;
+      }
+      .title {
+        font-size: 2rem;
+      }
+      .sign-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+      
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <h2>My Portfolio</h2>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="biodata.html">Biodata</a>
+      <a href="resume.html" class="active">Resume</a>
+    </nav>
+  </header>
+
+  <!-- Resume Section -->
+  <div class="container" role="main">
+    <div class="title">Yogita V. Badiger</div>
+
+    <div class="contact">
+      📧 <a href="mailto:badigeryogita8@gmail.com">badigeryogita8@gmail.com</a> &nbsp; | &nbsp;
+      📞 6361451604 <br>
+      🌐 <a href="https://www.linkedin.com/in/yogita-badiger-166a2122a/" target="_blank" rel="noreferrer">linkedin.com/in/yogita-badiger-166a2122a</a>
+      &nbsp; | &nbsp;
+      <a href="https://github.com/yogita" target="_blank" rel="noreferrer">github.com/yogita</a>
+    </div>
+
+    <!-- Resume content -->
+    <section aria-labelledby="objective">
+      <h2 id="objective" class="section-title">CAREER OBJECTIVE</h2>
+      <p>To use my programming skills, logical thinking, and creativity to build impactful software solutions. I am passionate about learning new technologies and aim to grow while contributing to the success of the organization.</p>
+    </section>
+
+    <section aria-labelledby="education">
+      <h2 id="education" class="section-title">EDUCATION</h2>
+      <ul>
+        <li>
+          <span class="emph">SKSVMACET College, Laxmeshwar, Karnataka</span>
+          <span class="muted"> — 2023 – 2027 (pursuing)</span><br>
+          <span class="muted">Bachelor of Engineering in Computer Science, CGPA: 8.32</span>
+        </li>
+
+        <li>
+          <span class="emph">Diploma in Computer Science & Engineering</span>
+          <span class="muted"> — 2021 – 2024</span><br>
+          Government Polytechnic for Women’s, Vidyanagar - Hubli 580021.
+          <ul>
+            <li>1st Year: 80.30% &amp; 77.00%</li>
+            <li>2nd Year: 81.30% &amp; 81.10%</li>
+            <li>3rd Year: 82.20% &amp; 83.40%</li>
+          </ul>
+        </li>
+
+        <li>
+          <span class="emph">SSLC (2021)</span><br>
+          Government Junior Technical School, Vidyanagar – Hubli 580021. &nbsp; <span class="muted">Percentage: 78.3%</span>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="projects">
+      <h2 id="projects" class="section-title">PROJECTS</h2>
+      <ul>
+        <li><span class="emph">Top 10 Museums List with Their Explanation:</span> HTML, CSS.</li>
+        <li><span class="emph">The Cat Cave (Online Cat Shopping):</span> HTML, CSS, JavaScript, SQL, PHP, XAMPP.</li>
+        <li><span class="emph">Online Course Registration:</span> HTML, CSS, JavaScript, SQL, PHP, XAMPP.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="skills">
+      <h2 id="skills" class="section-title">SKILLS</h2>
+      <ul>
+        <li><span class="emph">Technical:</span> C, Java, Python, HTML, CSS, JavaScript, SQL, Git, Cloud Computing (AWS).</li>
+        <li><span class="emph">Soft Skills:</span> Communication, Problem-solving, Teamwork, Leadership.</li>
+        <li><span class="emph">Languages:</span> English, Kannada, Hindi.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="certs">
+      <h2 id="certs" class="section-title">CERTIFICATIONS</h2>
+      <ul>
+        <li>Python for Beginners, Introduction to SQL, Introduction to HTML, Introduction to Cloud Computing — <strong>Simplilearn</strong> (2023).</li>
+        <li>Cloud Computing, Introduction to Cloud Computing, Virtualization & Cloud Computing, Networking & Web Tech, Introduction to Data Science — <strong>Infosys</strong> (2023–2025).</li>
+        <li>UNXT Soft Skills Development Program — <strong>Unnati Foundation</strong> (Nov 2023).</li>
+        <li>Git Training & Participation Certificate — <strong>Spoken Tutorial Project (IIT Bombay)</strong> (May 2022).</li>
+        <li>Mastering Git & GitHub — <strong>Microsoft Learn Student Ambassador</strong> (2025).</li>
+        <li>Hackathon Participation(2025) — <strong>TCE Hackfinity (24-hour)</strong>.</li>
+        <li>Hackathon Participation(2025) — Best Project Award in <b>"STACKCRAFT - Build Your Web Skills"</b>, a 5-days hands-on workshop & competition organized by the <b>Department of Computer Science & Engineering in association with FORTUNR Association, IQAC, IIC & ISTE.(03-hour)</b>.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="declaration">
+      <h2 id="declaration" class="section-title">DECLARATION</h2>
+      <p class="declaration">I hereby declare that the information provided above is true to the best of my knowledge.</p>
+
+      <div class="sign-row">
+        <div class="left-side">
+          <div><b>Place:</b> Siddapur</div>
+          <div><b>Date:</b> DD/MM/YYYY</div>
+        </div>
+        <div class="right-side">
+          <div class="signature">Yogita V. Badiger</div>
+          <div><em>Signature</em></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">© 2025 Yogita V. Badiger | All Rights Reserved</div>
+  </div>
+</body>
+</html>
